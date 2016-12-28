@@ -1,0 +1,30 @@
+h1 {
+  font-family: 'Libre Baskerville',serif;
+  color: #FF9900;
+}
+
+th, h4, .filterlabel {
+  font-family: 'Merriweather',serif;
+  font-size: 16pt;
+  color: #000000;
+}
+
+.jumbotron {
+    background-color: #999999;
+}
+
+.totalwrapper {
+    background-color: #666666;
+}
+
+tr {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+.editbackground{
+    background-color: #999999;
+}
