@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/services.firebase';
 import {Book} from './Book';
 import {Author} from './Author';
-import {Content} from './Content';
+//import {Content} from './Content';
 
 
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit  {
   
   books:Book[];
   authors:Author[];
-  contents:Content[];
+ // contents:Content[];
   blurbs=[];
 
   appState: string;
@@ -36,6 +36,26 @@ export class AppComponent implements OnInit  {
   activeAuthorImage: number;
   activeAuthorBio: string;
 
+        activeOneFineDay: string;
+        activeChileVocab: string;
+        activeJapanPhrase: string;
+        activeNotes: string;
+        activePersonOfInterest: string;
+        activeProverb: string;
+        activeArticleType: string;
+        activeFlavorColor: string;
+        activeKanji: string;
+        activeQuote: string;
+        activeFrontCoverPhoto: string;
+        activeBackCoverPhoto: string;
+        activeEverydayChilePhoto: string;
+        activeStoryA: string;
+        activeStoryB: string;
+        activeStoryC: string;
+        activeStoryBlender: string;
+        activeStoryLive: string;
+        activeStoryAftereffects: string;
+
    constructor(private _fs:FirebaseService) {
     
       }
@@ -52,13 +72,14 @@ export class AppComponent implements OnInit  {
         this.authors = authors;
       });
         //GET CONTENTS FEED
-        this._fs.getContents().subscribe(contents => {
-        this.contents = contents;
-      });
+        //this._fs.getContents().subscribe(contents => {
+       // this.contents = contents;
+      //});
+
         //GET BLURBS FEED
-        this._fs.getBlurbs().subscribe(blurbs => {
-        this.blurbs = blurbs;
-      });
+       // this._fs.getBlurbs().subscribe(blurbs => {
+       // this.blurbs = blurbs;
+      //});
     }
       changeState(state, key){
         console.log('Changing state to:'+state);
@@ -96,8 +117,27 @@ export class AppComponent implements OnInit  {
     summary:string,
     bio:string,
     firstname:string,
-    lastname:number,
-    img:string){
+    lastname:string,
+    img:string,
+    chilevocab:string,
+    japanphrases:string,
+    notes:string,
+    pois:string,
+    proverbs:string,
+    articletypes:string,
+    flavorcolors:string,
+    kanjis:string,
+    quotes:string,
+    bcphotos:string,
+    ecpphotos:string,
+    fcphotos:string,
+    ofdphotos:string,
+    storya:string,
+    storyb:string,
+    storyc:string,
+    storybl:string,
+    storyli:string,
+    storyaf:string){
 
       var created_at = new Date().toString();
 
@@ -113,6 +153,25 @@ export class AppComponent implements OnInit  {
         firstname:firstname,
         lastname:lastname,
         img:img,
+        chilevocab:chilevocab,
+    japanphrases:japanphrases,
+    notes:notes,
+    pois:pois,
+    proverbs:proverbs,
+    articletypes:articletypes,
+    flavorcolors:flavorcolors,
+    kanjis:kanjis,
+    quotes:quotes,
+    bcphotos:bcphotos,
+    ecpphotos:ecpphotos,
+    fcphotos:fcphotos,
+    ofdphotos:ofdphotos,
+    storya:storya,
+    storyb:storyb,
+    storyc:storyc,
+    storybl:storybl,
+    storyli:storyli,
+    storyaf:storyaf,
         created_at:created_at
         }
 
@@ -135,6 +194,25 @@ export class AppComponent implements OnInit  {
         this.activeFirstName =          book.firstname;
         this.activeLastName =           book.lastname;
         this.activeAuthorImage =        book.img;
+        this.activeOneFineDay=          book.ofdphotos;
+        this.activeChileVocab=          book.chilevocab;
+        this.activeJapanPhrase=         book.japanphrases;
+        this.activeNotes=               book.notes;
+        this.activePersonOfInterest=    book.pois;
+        this.activeProverb=             book.proverbs;
+        this.activeArticleType=         book.articletypes;
+        this.activeFlavorColor=         book.flavorcolors;
+        this.activeKanji=               book.kanjis;
+        this.activeQuote=               book.quotes;
+        this.activeFrontCoverPhoto=     book.fcphotos;
+        this.activeBackCoverPhoto=      book.bcphotos;
+        this.activeEverydayChilePhoto=  book.ecpphotos;
+        this.activeStoryA=              book.storya;
+        this.activeStoryB=              book.storyb;
+        this.activeStoryC=              book.storyc;
+        this.activeStoryBlender=        book.storybl;
+        this.activeStoryLive=           book.storyli;
+        this.activeStoryAftereffects=   book.storyaf;
 
       }
 
@@ -150,7 +228,27 @@ export class AppComponent implements OnInit  {
           bio:this.activeAuthorBio,
           firstname:this.activeFirstName,
           lastname:this.activeLastName,
-          img:this.activeAuthorImage
+          img:this.activeAuthorImage,
+
+        ofdphotos:this.activeOneFineDay,
+        chilevocab:this.activeChileVocab,
+        japanphrases:this.activeJapanPhrase,
+        notes:this.activeNotes,
+        pois:this.activePersonOfInterest,
+        proverbs:this.activeProverb,
+        articletypes:this.activeArticleType,
+        flavorcolors:this.activeFlavorColor,
+        kanjis:this.activeKanji,
+        quotes:this.activeQuote,
+        fcphotos:this.activeFrontCoverPhoto,
+        bcphotos:this.activeBackCoverPhoto,
+        ecpphotos:this.activeEverydayChilePhoto,
+        storya:this.activeStoryA,
+        storyb:this.activeStoryB,
+        storyc:this.activeStoryC,
+        storybl:this.activeStoryBlender,
+        storyli:this.activeStoryLive,
+        storyaf:this.activeStoryAftereffects,
 
         }
         this._fs.updateBook(this.activeKey, updBook);

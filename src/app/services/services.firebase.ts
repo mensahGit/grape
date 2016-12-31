@@ -4,7 +4,7 @@ import  'rxjs/add/operator/map';
 
 import {Author} from '../Author';
 import {Book} from '../Book';
-import {Content} from '../Content';
+//import {Content} from '../Content';
 
 
 @Injectable()
@@ -12,8 +12,8 @@ import {Content} from '../Content';
 export class FirebaseService{
 authors:FirebaseListObservable<Author[]>;
 books:FirebaseListObservable<Book[]>;
-contents:FirebaseListObservable<Content[]>;
-blurbs:FirebaseListObservable<Content[]>;
+//contents:FirebaseListObservable<Content[]>;
+//blurbs:FirebaseListObservable<Content[]>;
 
 
 constructor(private _fs:AngularFire){}
@@ -41,17 +41,17 @@ constructor(private _fs:AngularFire){}
       return this.authors;
     }
 
-    getContents(){
-      this.contents = this._fs.database.list('/contents') as
-      FirebaseListObservable<Content[]>
-      return this.contents;
-    }
+    // getContents(){
+    //   this.contents = this._fs.database.list('/contents') as
+    //   FirebaseListObservable<Content[]>
+    //   return this.contents;
+    // }
 
-    getBlurbs(){
-      this.blurbs = this._fs.database.list('/contents' +'/0'+ '/blurbs') as
-      FirebaseListObservable<Content[]>
-      return this.blurbs;
-    }
+    // getBlurbs(){
+    //   this.blurbs = this._fs.database.list('/contents' +'/0'+ '/blurbs') as
+    //   FirebaseListObservable<Content[]>
+    //   return this.blurbs;
+    // }
 
     addBook(newBook){
       return this.books.push(newBook);

@@ -1,6 +1,6 @@
 h1 {
   font-family: 'Libre Baskerville',serif;
-  color: #FF9900;
+  color: #FFFFFF;
 }
 
 th, h4, .filterlabel {
@@ -10,11 +10,14 @@ th, h4, .filterlabel {
 }
 
 .jumbotron {
-    background-color: #999999;
+    background-color: #E08700;
+}
+.jumbotron p {
+    color: #000000;
 }
 
 .totalwrapper {
-    background-color: #666666;
+    background-color: #FF9900;
 }
 
 tr {
@@ -26,5 +29,15 @@ td {
 }
 
 .editbackground{
-    background-color: #999999;
+    background-color: #FF9900;
+}
+
+.mensah {
+    background-color: #E08700;
+}
+
+.hamhead {
+    background-color: #002F6E;
+    padding: 25px;
+    border: 3px solid #E08700;
 }

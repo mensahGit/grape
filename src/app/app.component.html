@@ -1,22 +1,7 @@
-<!--
-<div class="jumbotron">
-  <button class="btn btn-primary" type="button" *ngFor="let book of books">
-      {{book.theme}} <span class="badge">1</span>
-  </button>
-</div>
-
-
-
-<button (click)="getBooks()" class="button">Add Book</button>
--->
-
-<!-- <h1>
-  {{title}}
-</h1> -->
 <div class="totalwrapper">
 <div class="jumbotron text-center">
 
-<a href="https://mensahgit.github.io/kodotest/">  
+<a href="http://localhost:4200/">  
 
 <img src ="http://www.mensahdesigns.com/images/logoTeeth.png" alt="logoTeeth" width="165px" height="128px">
 </a>
@@ -38,19 +23,27 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="http://www.designerphotomontage.com/images/bg1.jpg" alt="Butterfly">
+      <img src="http://www.mensahdesigns.com/kodokover/KODO_1_2016-01.png" alt="one">
     </div>
 
     <div class="item">
-      <img src="http://www.designerphotomontage.com/images/bg2.jpg" alt="Actionscript">
+      <img src="http://www.mensahdesigns.com/kodokover/KODO_2_2016-01.png" alt="two">
     </div>
 
     <div class="item">
-      <img src="http://www.designerphotomontage.com/images/bg3.jpg" alt="Chile">
+      <img src="http://www.mensahdesigns.com/kodokover/KODO_3_2016-01.png" alt="three">
     </div>
 
     <div class="item">
-      <img src="http://www.designerphotomontage.com/images/bg4.jpg" alt="Wolf">
+      <img src="http://www.mensahdesigns.com/kodokover/KODO_4_2016-01.png" alt="four">
+    </div>
+
+    <div class="item">
+      <img src="http://www.mensahdesigns.com/kodokover/KODO_5_2016-01.png" alt="five">
+    </div>
+
+    <div class="item">
+      <img src="http://www.mensahdesigns.com/kodokover/KODO_6_2016-01.png" alt="six">
     </div>
   </div>
 
@@ -64,8 +57,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-<!--<div class="navbar navbar-default">
+<!--
+<div class="navbar navbar-default">
     <div class="row">
           <div class="navbar-left">
             <ul class="nav navbar-nav">
@@ -76,7 +69,8 @@
               <h2>KODOSUICHA:DB APP</h2>
             </div>
     </div>
-</div>-->
+</div>
+-->
 <br>
 
 <div class="row">
@@ -94,11 +88,11 @@
   </div>
 </div>
 
+
+<div *ngIf="appState == 'add' " class="hamhead">
+
 <!-- ADD FORM -->
-<div *ngIf="appState == 'add' " class="row">
-  <div class="col-lg-12">
-    <h3>Add Book</h3>
-    <!-- FORM VARS ORDER MATTERS: KEEP THE SAME ORDER AS FUNCTION -->
+ <!-- FORM VARS ORDER MATTERS: KEEP THE SAME ORDER AS FUNCTION -->
       <form (submit)="addBook(
         theme.value,
         issuedate.value,
@@ -111,180 +105,291 @@
         firstname.value,
         lastname.value,
         img.value,
-        firstname.value
+        firstname.value,
+    chilevocab.value,
+    japanphrases.value,
+    notes.value,
+    pois.value,
+    proverbs.value,
+    articletypes.value,
+    flavorcolors.value,
+    kanjis.value,
+    quotes.value,
+    bcphotos.value,
+    ecpphotos.value,
+    fcphotos.value,
+    ofdphotos.value,
+    storya.value,
+    storyb.value,
+    storyc.value,
+    storybl.value,
+    storyli.value,
+    storyaf.value
         )">
-        <div class="row">
-              <div class="col-md-8">
-                    <label>Theme:
-                        <input type="text" placeholder="Theme" #theme>
-                    </label>
-              </div>
-              <div class="col-md-4">
-                    <label>Issue Date:
-                        <input type="text" placeholder="Issue Date" #issuedate>
-                    </label>
-              </div>
-        </div>
-
- <div class="row">
-          <div class="col-md-8">
-            <label>Month:
+<table class="table">
+   
+    <tbody>
+    <tr>
+    <th>HAPPY</th>
+    <th>NEW</th> 
+    <th>YEAR:-)!</th>
+  </tr>
+      <tr class="success">
+        <td> <label>Theme:
+              <input type="text" placeholder="Theme" #theme>
+          </label></td>
+        <td> <label>Issue Date:
+               <input type="text" placeholder="Issue Date" #issuedate>
+          </label></td>
+        <td> <label>Month:
               <input type="text" placeholder="Month" #month>
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>Year
-              <textarea #year>
-
-              </textarea>
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-8">
-            <label>Cover Image:
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Year:
+               <input type="text" placeholder="Year" #year>
+          </label></td>
+        <td> <label>Cover Image:
               <input type="text" placeholder="Cover Image" #coverimg>
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>Objective:
+          </label></td>
+        <td> <label>Objective:
               <input type="text" placeholder="Objective" #objective>
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-8">
-            <label>Summary
+          </label></td>
+      </tr>
+      <tr class="info">
+        <td> <label>Summary:
               <input type="text" placeholder="Summary" #summary>
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>First Name:
-              <input type="text" placeholder="First Name" #firstname>
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4">
-            <label>Last Name:
-              <input type="text" placeholder="Last Name" #lastname>
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>Author Image:
+          </label></td>
+        <td> <label>First Name:
+               <input type="text" placeholder="First Name" #firstname>
+          </label></td>
+        <td> <label>Last Name:
+             <input type="text" placeholder="Last Name" #lastname>
+          </label></td>
+      </tr>
+       <tr class="danger">
+        <td> <label>Author Image:
               <input type="text" placeholder="Author Image" #img>
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label>Author Bio:
+            </label></td>
+        <td> <label>Author Biography:
               <input type="text" placeholder="Author Bio" #bio>
+            </label></td>
+        <td> <label>One Fine Day Photo:
+              <input type="text" placeholder="One Fine Day Photo" #ofdphotos>
+          </label></td>
+      </tr>
+      <tr class="success">
+        <td> <label>Chile Vocab:
+              <input type="text" placeholder="Chile Vocab" #chilevocab>
+          </label></td>
+        <td> <label>Japan Phrase:
+               <input type="text" placeholder="Japan Phrase" #japanphrases>
+          </label></td>
+        <td> <label>Notes:
+              <input type="text" placeholder="Notes" #notes>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Person Of Interest:
+               <input type="text" placeholder="Person Of Interest" #pois>
+          </label></td>
+        <td> <label>Proverbs:
+              <input type="text" placeholder="Proverbs" #proverbs>
+          </label></td>
+        <td><label>Article Type:
+              <input type="text" placeholder="Article Type" #articletypes> 
             </label>
-          </div>
-        </div>
+        </td>
+      </tr>
+      <tr class="success">
+        <td> <label>Flavor Color:
+              <input type="text" placeholder="Flavor Color" #flavorcolors>
+          </label></td>
+        <td> <label>Kanji:
+               <input type="text" placeholder="Kanji" #kanjis>
+          </label></td>
+        <td> <label>Quote:
+              <input type="text" placeholder="Quotes" #quotes>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Front Cover Photo:
+               <input type="text" placeholder="Front Cover Photo" #fcphotos>
+          </label></td>
+        <td> <label>Back Cover Photo:
+              <input type="text" placeholder="Back Cover Photo" #bcphotos>
+          </label></td>
+        <td> <label>Everyday Chile Photo:
+              <input type="text" placeholder="Everyday Chile Photo" #ecpphotos>
+          </label></td>
+        </tr>
+      <tr class="success">
+        <td> <label>Story A:<br/>
+              <textarea placeholder="Paste Story A here..." #storya></textarea>
+          </label></td>
+        <td> <label>Story B:<br/>
+               <textarea placeholder="Paste Story B here..." #storyb></textarea>
+          </label></td>
+        <td> <label>Story C:<br/>
+              <textarea placeholder="Paste Story C here..." #storyc></textarea>
+          </label></td>
+      </tr>
+      <tr class="success">
+        <td> <label>Story Blender:<br/>
+              <textarea placeholder="Paste Story Blender here..." #storybl></textarea>
+          </label></td>
+        <td> <label>Story Live:<br/>
+               <textarea placeholder="Paste Story Live here..." #storyli></textarea>
+          </label></td>
+        <td> <label>Story AfterEffects:<br/>
+              <textarea placeholder="Paste Story Aftereffects here..." #storyaf></textarea>
+          </label></td>
+      </tr>
+    </tbody>
+      
+  </table>
+<input type="submit" class="btn btn-primary" value="Submit">
+<button (click)="changeState('default')" class="btn btn-danger">Cancel</button>
+  </form>
 
-        <div class="row">
-          <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" value="Submit">
-          </div>
-        </div>
+</div> <!--NGIF ADD BUTTON PUSHED ENDS HERE; HAMHEAD CLASS ENDS HERE-->
 
-      </form>
-  </div>
-</div>
 
-<!-- EDIT FORM GOES HERE....-->
 
-<div *ngIf="appState == 'edit' " class="row">
-  <div class="editbackground">
-<div class="col-md-12">
-  <h3>Edit Book</h3>
+<!--EDIT FORM GOES HERE-->
+
+<div *ngIf="appState == 'edit' " class="hamhead">
   <!-- FORM VARS ORDER MATTERS: KEEP THE SAME ORDER AS FUNCTION -->
     <form (submit)="updateBook()">
-      <div class="row">
-            <div class="col-md-8">
-                  <label>Theme
-                      <input type="text" [(ngModel)]="activeTheme" name="activeTheme" placeholder="Theme" #theme>
-                  </label>
-            </div>
-            <div class="col-md-4">
-                  <label>Issue Date
-                         <input type="text" [(ngModel)]="activeIssueDate" name="activeIssueDate" placeholder="Issue Date" #issuedate>
-                  </label>
-            </div>
-      </div>
+<table class="table">
+   
+    <tbody>
+    <tr>
+    <th>EDIT</th>
+    <th>FORM</th> 
+    <th>HERE:</th>
+  </tr>
+      <tr class="danger">
+        <td> <label>Theme:
+              <input type="text" [(ngModel)]="activeTheme" name="activeTheme" placeholder="Theme" #theme>
+          </label></td>
+        <td> <label>Issue Date:
+               <input type="text" [(ngModel)]="activeIssueDate" name="activeIssueDate" placeholder="Issue Date" #issuedate>
+          </label></td>
+        <td> <label>Month:
+              <input type="text" [(ngModel)]="activeMonth" name="activeMonth" placeholder="Month" #month>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Year:
+               <input type="text" [(ngModel)]="activeYear" name="activeYear" placeholder="Year" #year>
+          </label></td>
+        <td> <label>Cover Image:
+              <input type="text" [(ngModel)]="activeCoverImage" name="activeCoverImage" placeholder="Cover Image" #coverimg>
+          </label></td>
+        <td> <label>Objective:
+              <input type="text" [(ngModel)]="activeObjective" name="activeObjective" placeholder="Objective" #objective>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Summary:
+              <input type="text" [(ngModel)]="activeSummary" name="activeSummary" placeholder="Summary" #summary>
+          </label></td>
+        <td> <label>First Name:
+               <input type="text" [(ngModel)]="activeFirstName" name="activeFirstName" placeholder="First Name" #firstname>
+          </label></td>
+        <td> <label>Last Name:
+             <input type="text" [(ngModel)]="activeLastName" name="activeLastName" placeholder="Last Name" #lastname>
+          </label></td>
+      </tr>
+       <tr class="danger">
+        <td> <label>Author Image:
+              <input type="text" [(ngModel)]="activeAuthorImage" name="activeAuthorImage" placeholder="Author Image" #img>
+            </label></td>
+        <td> <label>Author Biography:
+              <input type="text" [(ngModel)]="activeAuthorBio" name="activeAuthorBio" placeholder="Author Bio" #bio>
+            </label></td>
+        <td> <label>One Fine Day Photo:
+              <input type="text" [(ngModel)]="activeOneFineDay" name="activeOneFineDay" placeholder="One Fine Day Photo" #ofdphotos>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Chile Vocab:
+              <input type="text" [(ngModel)]="activeChileVocab" name="activeChileVocab" placeholder="Chile Vocab" #chilevocab>
+          </label></td>
+        <td> <label>Japan Phrase:
+               <input type="text" [(ngModel)]="activeJapanPhrase" name="activeJapanPhrase" placeholder="Japan Phrase" #japanphrases>
+          </label></td>
+        <td> <label>Notes:
+              <input type="text" [(ngModel)]="activeNotes" name="activeNotes" placeholder="Notes" #notes>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Person Of Interest:
+               <input type="text" [(ngModel)]="activePersonOfInterest" name="activePersonOfInterest" placeholder="Person Of Interest" #pois>
+          </label></td>
+        <td> <label>Proverb:
+              <input type="text" [(ngModel)]="activeProverb" name="activeProverb" placeholder="Proverb" #proverbs>
+          </label></td>
+        <td><label>Article Type:
+              <input type="text" [(ngModel)]="activeArticleType" name="activeArticleType" placeholder="Article Type" #articletypes> 
+            </label>
+        </td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Flavor Color:
+              <input type="text" [(ngModel)]="activeFlavorColor" name="activeFlavorColor" placeholder="Flavor Color" #flavorcolors>
+          </label></td>
+        <td> <label>Kanji:
+               <input type="text" [(ngModel)]="activeKanji" name="activeKanji" placeholder="Kanji" #kanjis>
+          </label></td>
+        <td> <label>Quote:
+              <input type="text" [(ngModel)]="activeQuote" name="activeQuote" placeholder="Quotes" #quotes>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Front Cover Photo:
+               <input type="text" [(ngModel)]="activeFrontCoverPhoto" name="activeFrontCoverPhoto" placeholder="Front Cover Photo" #fcphotos>
+          </label></td>
+        <td> <label>Back Cover Photo:
+              <input type="text" [(ngModel)]="activeBackCoverPhoto" name="activeBackCoverPhoto" placeholder="Back Cover Photo" #bcphotos>
+          </label></td>
+        <td> <label>Everyday Chile Photo:
+              <input type="text" [(ngModel)]="activeEverydayChilePhoto" name="activeEverydayChilePhoto" placeholder="Everyday Chile Photo" #ecpphotos>
+          </label></td>
+        </tr>
+      <tr class="danger">
+        <td> <label>Story A:<br/>
+              <textarea [(ngModel)]="activeStoryA" name="activeStoryA" placeholder="Paste Story A here..." #storya></textarea>
+          </label></td>
+        <td> <label>Story B:<br/>
+               <textarea [(ngModel)]="activeStoryB" name="activeStoryB" placeholder="Paste Story B here..." #storyb></textarea>
+          </label></td>
+        <td> <label>Story C:<br/>
+              <textarea [(ngModel)]="activeStoryC" name="activeStoryC"placeholder="Paste Story C here..." #storyc></textarea>
+          </label></td>
+      </tr>
+      <tr class="danger">
+        <td> <label>Story Blender:<br/>
+              <textarea [(ngModel)]="activeStoryBlender" name="activeStoryBlender"placeholder="Paste Story Blender here..." #storybl></textarea>
+          </label></td>
+        <td> <label>Story Live:<br/>
+               <textarea [(ngModel)]="activeStoryLive" name="activeStoryLive" placeholder="Paste Story Live here..." #storyli></textarea>
+          </label></td>
+        <td> <label>Story AfterEffects:<br/>
+              <textarea [(ngModel)]="activeStoryAftereffects" name="activeStoryAftereffects" placeholder="Paste Story Aftereffects here..." #storyaf></textarea>
+          </label></td>
+      </tr>
+    </tbody>
+      
+  </table>
+ <input type="submit" class="btn btn-info" value="Submit">
+<button (click)="changeState('default')" class="btn btn-danger">Cancel</button>
+</form>
+<br/>
+<br/>
 
-      <div class="row">
-        <div class="col-md-8">
-          <label>Month
-            <input type="text" [(ngModel)]="activeMonth" name="activeMonth" placeholder="Month" #month>
-          </label>
-        </div>
-        <div class="col-md-4">
-          <label>Year
-            <textarea [(ngModel)]="activeYear" name="activeYear" placeholder="Year" #year>
-
-            </textarea>
-          </label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8">
-          <label>Cover Image
-            <input type="text" [(ngModel)]="activeCoverImage" name="activeCoverImage" placeholder="Cover Image" #coverimg>
-          </label>
-        </div>
-        <div class="col-md-4">
-          <label>Objective
-            <input type="text" [(ngModel)]="activeObjective" name="activeObjective" placeholder="Objective" #objective>
-          </label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8">
-          <label>Summary
-            <input type="text" [(ngModel)]="activeSummary" name="activeSummary" placeholder="Summary" #summary>
-          </label>
-        </div>
-        <div class="col-md-4">
-          <label>First Name
-            <input type="text" [(ngModel)]="activeFirstName" name="activeFirstName" placeholder="First Name" #firstname>
-          </label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <label>Last Name
-            <input type="text" [(ngModel)]="activeLastName" name="activeLastName"placeholder="Last Name" #lastname>
-          </label>
-        </div>
-        <div class="col-md-4">
-          <label>Author Image
-            <input type="text" [(ngModel)]="activeAuthorImage" name="activeAuthorImage" placeholder="Author Image" #authorimg>
-          </label>
-        </div>
-        <div class="col-md-4">
-          <label>Author Bio
-            <input type="text" [(ngModel)]="activeAuthorBio" name="activeAuthorBio" placeholder="Author Bio" #bio>
-          </label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <input type="submit" class="btn btn-info" value="Submit">
-        </div>
-      </div>
-
-    </form>
-</div>
-</div> <!-- END .EDITBACKGROUND CLASS DIV  -->
-</div>
+</div> <!--END .HAMHEAD CLASS DIV-->
 
 <div *ngIf="appState == 'extend' " >
   <div class="row">
@@ -324,24 +429,24 @@
 
             </div>
       </div>
-  </div>
+  </div><!-- *NGFOR BOOKS ENDS HERE -->
   
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <div *ngIf="books">
-      <table>
-        <thead>
-          <tr>
+      <table class="table">
+        <thead >
+          <tr class="mensah">
             <th>Theme:</th>
             <th>Issue Date:</th>
             <th>Year:</th>
             <th></th>
-          </tr>
+          </tr >
         </thead>
         <tbody>
-          <tr *ngFor="let book of books">
+          <tr *ngFor="let book of books" class="mensah">
             <td><h1>{{book.theme}}</h1></td>
             <td><h1>{{book.issuedate}}</h1></td>
             <td><h1>{{book.year}}</h1></td>
@@ -361,6 +466,6 @@
 
 
 
-</div> <!-- END CONTAINER DIV -->
+</div> <!--END CONTAINER DIV-->
 
-</div> <!-- END TOTAL WRAPPER DIV -->
+</div> <!--END TOTAL WRAPPER DIV-->
