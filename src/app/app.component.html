@@ -76,7 +76,7 @@
 <div class="row">
 
   <div class="col-sm-6">
-    <button (click)="changeState('add')"class="button">Add Book</button>
+    <button (click)="changeState('add')"class="btn btn-success">Add Book</button>
   </div>
   <div class="col-sm-6">
     <label class="filterlabel">Filter Theme
@@ -391,6 +391,7 @@
 
 </div> <!--END .HAMHEAD CLASS DIV-->
 
+
 <div *ngIf="appState == 'extend' " >
   <div class="row">
     <div class="col-md-12">
@@ -402,7 +403,7 @@
 
 
   <div *ngFor="let book of books">
-      <div *ngIf="book.$key == activeKey">
+      <div *ngIf="book.$key == activeKey" class="eggstender">
             <div class="row">
                       <div class="col-md-6">
                           <h3>{{book.theme}}</h3>
@@ -430,8 +431,9 @@
             </div>
       </div>
   </div><!-- *NGFOR BOOKS ENDS HERE -->
-  
+
 </div>
+
 
 <div class="row">
   <div class="col-md-12">

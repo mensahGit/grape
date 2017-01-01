@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: "AIzaSyCVHk1dJveENPqZN06QvXISNuhenfiTnaY",
-  authDomain: "kodosuicha.firebaseapp.com",
-  databaseURL: "https://kodosuicha.firebaseio.com",
-  storageBucket: "kodosuicha.appspot.com"
+  apiKey: "AIzaSyD3ErQzSwDD7sE2LuavYGk5mj3JCBFMemk",
+  authDomain: "grapes-be493.firebaseapp.com",
+  databaseURL: "https://grapes-be493.firebaseio.com",
+  storageBucket: "grapes-be493.appspot.com"
 };
 
 @NgModule({

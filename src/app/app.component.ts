@@ -17,8 +17,8 @@ export class AppComponent implements OnInit  {
   
   books:Book[];
   authors:Author[];
- // contents:Content[];
-  blurbs=[];
+  // contents:Content[];
+  //blurbs=[];
 
   appState: string;
   
@@ -82,9 +82,9 @@ export class AppComponent implements OnInit  {
       //});
     }
       changeState(state, key){
-        console.log('Changing state to:'+state);
+        console.log('Changing STATE to:'+state);
         if(key){
-          console.log('Changing key to:'+key);
+          console.log('Changing KEY to:'+key);
           this.activeKey = key;
         }
         this.appState = state;
@@ -175,7 +175,7 @@ export class AppComponent implements OnInit  {
         created_at:created_at
         }
 
-        //console.log(newBusiness);
+        console.log(newBook);
         this._fs.addBook(newBook);
 
         this.changeState('default', null);

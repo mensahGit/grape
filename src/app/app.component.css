@@ -36,8 +36,33 @@ td {
     background-color: #421E5E;
 }
 
+
+
 .hamhead {
-    background-color: #002F6E;
+    background-color: #271238;
     padding: 25px;
-    border: 3px solid #E08700;
+    border: 5px dashed #FFFFFF;
+}
+
+#myCarousel {
+    background-color: #271238;
+    padding: 25px;
+    border: 15px solid #000000;
+}
+.eggstender {
+    background-color: #271238;
+    padding: 25px;
+    border: 5px dashed #FFFFFF;
+}
+
+.eggstender h3, p {
+    color: #FFFFFF;
+}
+
+.eggstender h4, li {
+    color: #9A4A9C;
+}
+
+.whitetype {
+    color: #FFFFFF;
 }
